@@ -101,14 +101,12 @@ void HashMap<K, V>::put(K keyIN, V elementIN) {
 	if (entry == NULL) {
 		entry = new HashNode<K, V>(keyIN, elementIN);
 		if (prev == NULL) {
-			// insert as first bucket
 			map[hashValue] = entry;
 		} else {
 			prev->setNext(entry);
 		}
 		nelements++;
 	} else {
-		// just update the value
 		entry->setElement(elementIN);
 		nelements++;
 	}
